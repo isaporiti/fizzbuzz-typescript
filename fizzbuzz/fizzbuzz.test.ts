@@ -1,15 +1,11 @@
 import {fizzbuzz} from "./fizzbuzz";
 
 describe('fizzbuzz', () => {
-    it('should return "Fizz" when argument is a number multiple of three', () => {
-      [3, 6, 9, 12].forEach(number => {
-        expect(fizzbuzz(number)).toBe("Fizz");
-      });
+    it.each([3, 6, 9, 12])('should return "Fizz" when argument is a number multiple of three', (number) => {
+      expect(fizzbuzz(number)).toBe("Fizz");
     });
 
-    it('should return "Buzz" if the number is a multiple of five', () => {
-      [5, 10].forEach(number => {
-        expect(fizzbuzz(number)).toBe("Buzz");
-      });
+    it.each([5, 10])('should return "Buzz" if the number is a multiple of five', (number) => {
+      expect(fizzbuzz(number)).toBe("Buzz");
     });
 });
