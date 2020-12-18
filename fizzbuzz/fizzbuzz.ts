@@ -1,8 +1,11 @@
 export function fizzbuzz(number: number) {
-  if (number % 3 === 0 && number % 5 == 0) {
+  const numberIsMultipleOfThree = number % 3 === 0;
+  const numberIsMultipleOfFive = number % 5 == 0;
+
+  if (numberIsMultipleOfThree && numberIsMultipleOfFive) {
     return "FizzBuzz";
   }
-  if (number % 5 === 0) {
+  if (numberIsMultipleOfFive) {
     return "Buzz";
   }
   return "Fizz";
