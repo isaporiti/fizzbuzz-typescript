@@ -1,12 +1,25 @@
 export function fizzbuzz(number: number) {
-  const numberIsMultipleOfThree = number % 3 === 0;
-  const numberIsMultipleOfFive = number % 5 === 0;
+    return checkFizzBuzz(new Multiple(number));
+}
 
-  if (numberIsMultipleOfThree && numberIsMultipleOfFive) {
-    return "FizzBuzz";
-  }
-  if (numberIsMultipleOfFive) {
-    return "Buzz";
-  }
-  return "Fizz";
+function checkFizzBuzz(number: Multiple) {
+    if (number.isMultipleOf(3) && number.isMultipleOf(5)) {
+        return "FizzBuzz";
+    }
+    if (number.isMultipleOf(5)) {
+        return "Buzz";
+    }
+    return "Fizz";
+}
+
+class Multiple {
+    private readonly number: number;
+
+    constructor(multiple: number) {
+        this.number = multiple;
+    }
+
+    public isMultipleOf(otherNumber: number) {
+        return this.number % otherNumber === 0;
+    }
 }
