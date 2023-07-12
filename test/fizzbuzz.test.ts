@@ -1,4 +1,4 @@
-import { fizzbuzz } from "./fizzbuzz";
+import { fizzbuzz } from "../src/fizzbuzz";
 
 describe('fizzbuzz', () => {
   it.each([3, 6, 9, 12])('should return "Fizz" when argument is a number multiple of three', (number) => {
